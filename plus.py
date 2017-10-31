@@ -9,8 +9,8 @@ number = raw_input('Chon dang bai tap: ')
 
 if number == '1':
 
-	bt = int(raw_input('Exercise: '))
-	for i in range(0, bt):
+	ex = int(raw_input('Exercise: '))
+	for i in range(0, ex):
 		mark = random.choice('+-')
 		a = random.randint(-100,100)
 		b = random.randint(-100,100)
@@ -30,8 +30,8 @@ if number == '1':
 
 elif number == '2':
 
-	bt = int(raw_input('Exercise: '))		
-	for i in range(0, bt):
+	ex = int(raw_input('Exercise: '))		
+	for i in range(0, ex):
 		mark = random.choice('+-')
 		a = random.randint(-100,100)
 		b = random.randint(-100,100)
@@ -72,22 +72,22 @@ elif number == '2':
 
 elif number == '3':
 
-	bt = int(raw_input('Exercise: '))
+	ex = int(raw_input('Exercise: '))
 	a = 0		
-	for i in range(0, bt+a):
+	for i in range(0, ex+a):
 		a = random.randint(-100,100)
 		b = random.randint(-100,100)
 		c = random.randint(-100,100)
 		a1 = random.randint(-100,100)
 		b1 = random.randint(-100,100)
 		c1 = random.randint(-100,100)
-		# solve system of linear equation by matrix
+		# solve system of linear equations by matrix
 		while True:
 			d = np.matrix([[a,b],[a1,b1]])
 			try:
 				d1 = np.linalg.inv(d)
 			except numpy.linalg.LinAlgError:
-				a += 1
+				a += 1 # add one system of linear equations 
 				break
 			else:
 				e = np.matrix([c,c1]).reshape(2,1)
